@@ -3,7 +3,7 @@
 
 
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -72,9 +72,9 @@ static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ 0,            	        XF86XK_MonBrightnessDown,  spawn, {.v = bridown } },
 	{ 0,            	        XF86XK_MonBrightnessUp,    spawn, {.v = briup } },
-	{ 0,				XF86XK_AudioLowerVolume, spawn, {.v = downvol } },
-	{ 0,				XF86XK_AudioMute, spawn, {.v = mutevol } },
-	{ 0,				XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } },
+	{ 0,				XF86XK_AudioLowerVolume,   spawn, {.v = downvol } },
+	{ 0,				XF86XK_AudioMute,          spawn, {.v = mutevol } },
+	{ 0,				XF86XK_AudioRaiseVolume,   spawn, {.v = upvol   } },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_e,      spawn,          {.v = files } },
