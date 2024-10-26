@@ -68,7 +68,8 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "gnome-terminal", NULL };
-static const char *files[]    = { "nautilus", NULL };
+static const char *printscreen[]  = { "flameshot", "gui" , NULL };
+static const char *files[]    = { "thunar", NULL };
 static const char *bridown[]  = { "brightnessctl", "s", "75-", NULL};
 static const char *briup[]  = { "brightnessctl", "s", "75+", NULL};
 static const char *upvol[]      = { "/usr/bin/wpctl",   "set-volume", "@DEFAULT_AUDIO_SINK@",      "5%+",      NULL };
@@ -77,6 +78,7 @@ static const char *mutevol[]    = { "/usr/bin/wpctl",   "set-mute",   "@DEFAULT_
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
+	{ 0,				XK_Print,  spawn,	   {.v = printscreen } },
 	{ 0,            	        XF86XK_MonBrightnessDown,  spawn, {.v = bridown } },
 	{ 0,            	        XF86XK_MonBrightnessUp,    spawn, {.v = briup } },
 	{ 0,				XF86XK_AudioLowerVolume,   spawn, {.v = downvol } },
