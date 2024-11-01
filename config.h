@@ -19,7 +19,8 @@ static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
+/*static const char col_cyan[]        = "#005577";*/
+static const char col_cyan[]        = "#567d54";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -67,6 +68,8 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *xrandr[] = { "xrandr", "--output", "eDP-1", "--auto", "--output", "HDMI-2", "--auto", "--output", "HDMI-1", "--auto", NULL };
+static const char *rofi[] = { "rofi", "-show", "drun", NULL };
 static const char *termcmd[]  = { "kitty", NULL };
 static const char *printscreen[]  = { "flameshot", "gui" , NULL };
 static const char *files[]    = { "thunar", NULL };
@@ -78,12 +81,14 @@ static const char *mutevol[]    = { "/usr/bin/wpctl",   "set-mute",   "@DEFAULT_
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
+	{ MODKEY|ShiftMask,		XK_p,	   spawn,	   {.v = rofi } },
 	{ 0,				XK_Print,  spawn,	   {.v = printscreen } },
 	{ 0,            	        XF86XK_MonBrightnessDown,  spawn, {.v = bridown } },
 	{ 0,            	        XF86XK_MonBrightnessUp,    spawn, {.v = briup } },
 	{ 0,				XF86XK_AudioLowerVolume,   spawn, {.v = downvol } },
 	{ 0,				XF86XK_AudioMute,          spawn, {.v = mutevol } },
 	{ 0,				XF86XK_AudioRaiseVolume,   spawn, {.v = upvol   } },
+	{ 0,				XF86XK_Display,		   spawn, {.v = xrandr } },
 	{ MODKEY,                       XK_e,      spawn,          {.v = files } },
 	{ MODKEY|ShiftMask,             XK_j,      movestack,      {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,      movestack,      {.i = -1 } },
