@@ -28,7 +28,8 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+/*static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };*/
+static const char *tags[] = { "1", "2", "3", "4"};
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -78,11 +79,13 @@ static const char *briup[]  = { "brightnessctl", "s", "75+", NULL};
 static const char *upvol[]      = { "/usr/bin/wpctl",   "set-volume", "@DEFAULT_AUDIO_SINK@",      "5%+",      NULL };
 static const char *downvol[]    = { "/usr/bin/wpctl",   "set-volume", "@DEFAULT_AUDIO_SINK@",      "5%-",      NULL };
 static const char *mutevol[]    = { "/usr/bin/wpctl",   "set-mute",   "@DEFAULT_AUDIO_SINK@",      "toggle",   NULL };
+static const char *powerprf[] = { "/home/pepe/workspaces/dotfiles/scripts/switch-powerplan.sh", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY|ShiftMask,		XK_p,	   spawn,	   {.v = rofi } },
 	{ 0,				XK_Print,  spawn,	   {.v = printscreen } },
+	{ 0,				XF86XK_Tools,		   spawn, {.v = powerprf } },
 	{ 0,            	        XF86XK_MonBrightnessDown,  spawn, {.v = bridown } },
 	{ 0,            	        XF86XK_MonBrightnessUp,    spawn, {.v = briup } },
 	{ 0,				XF86XK_AudioLowerVolume,   spawn, {.v = downvol } },
