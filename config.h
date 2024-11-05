@@ -71,7 +71,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *xrandr[] = { "xrandr", "--output", "eDP-1", "--auto", "--output", "HDMI-2", "--auto", "--output", "HDMI-1", "--auto", NULL };
 static const char *rofi[] = { "rofi", "-show", "drun", NULL };
-static const char *termcmd[]  = { "kitty", NULL };
+static const char *termcmd[]  = { "st", NULL };
 static const char *printscreen[]  = { "flameshot", "gui" , NULL };
 static const char *files[]    = { "thunar", NULL };
 static const char *bridown[]  = { "brightnessctl", "s", "75-", NULL};
@@ -149,4 +149,3 @@ static const Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
-
