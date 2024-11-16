@@ -3,7 +3,7 @@
 #include "movestack.c"
 
 /* appearance */
-static const unsigned int borderpx  = 2;        /* border pixel of windows */
+static const unsigned int borderpx  = 4;        /* border pixel of windows */
 static const unsigned int gappx     = 0;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
@@ -28,7 +28,7 @@ static const char *colors[][3]      = {
 
 /* tagging */
 /*static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };*/
-static const char *tags[] = { "1", "2", "3", "4"};
+static const char *tags[] = { "1", "2", "3", "4", "5"};
 
 static const Rule rules[] = {
 	/* xprop(1):
