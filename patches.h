@@ -461,7 +461,7 @@
 /* Adds a window task switcher toggled using alt-tab.
  * https://dwm.suckless.org/patches/alt-tab/
  */
-#define ALT_TAB_PATCH 0
+#define ALT_TAB_PATCH 1
 
 /* All floating windows are centered, like the center patch, but without a rule.
  * The center patch takes precedence over this patch.
@@ -514,7 +514,7 @@
  * than the original ~/.dwm folder.
  * https://dwm.suckless.org/patches/autostart/
  */
-#define AUTOSTART_PATCH 0
+#define AUTOSTART_PATCH 1
 
 /* By default, windows that are not visible when requesting a resize/move will not
  * get resized/moved. With this patch, they will.
@@ -1479,13 +1479,13 @@
  * the float border color, awesomebar, urgentborder and titlecolor patches.
  * https://dwm.suckless.org/patches/xrdb/
  */
-#define XRDB_PATCH 0
+#define XRDB_PATCH 1
 
 /* This patch allows for integer, float and string settings to be loaded from Xresources.
  * Xresources takes precedence over xrdb.
  * https://dwm.suckless.org/patches/xresources/
  */
-#define XRESOURCES_PATCH 0
+#define XRESOURCES_PATCH 1
 
 /* Simple patch that allows floating windows to be zoomed into the master stack position.
  * https://www.reddit.com/r/suckless/comments/ie5fe3/zoomfloating_my_own_simple_original_patch/
